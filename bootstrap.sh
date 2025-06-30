@@ -6,24 +6,21 @@ echo "🚀 Bootstrap de l'environnement..."
 
 # Définir le répertoire pour installer chezmoi
 BINDIR="$HOME/.local/bin"
-export PATH="$BINDIR:$PATH"
+CHEZMOI_PATH="$BINDIR/chezmoi"
 
-# Installer chezmoi si pas déjà présent
 if ! command -v chezmoi &> /dev/null; then
     echo "📦 Installation de chezmoi..."
     mkdir -p "$BINDIR"
     sh -c "$(curl -fsLS get.chezmoi.io)"
 fi
 
-# Initialiser chezmoi avec ton repo
 if [ ! -d "$HOME/.local/share/chezmoi" ]; then
-    echo "🔧 Initialisation de chezmoi avec ton dépôt..."
-    chezmoi init https://github.com/nicotinii/chezmoi.git
+    echo "🔧 Initialisation de chezmoi avec ton dépôt Git..."
+    "$CHEZMOI_PATH" init https://github.com/nicotinii/chezmoi.git
 fi
 
-# Appliquer la configuration
 echo "📂 Application de la configuration..."
-chezmoi apply
+"$CHEZMOI_PATH" apply
 
 # Installer Zsh si pas déjà fait
 if ! command -v zsh &> /dev/null; then
