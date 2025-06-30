@@ -18,7 +18,7 @@ fi
 if [ ! -d "$HOME/.local/share/chezmoi" ]; then
     echo "🔧 Initialisation de chezmoi avec ton dépôt Git..."
     export PATH="$HOME/.local/bin:$PATH"
-    chezmoi init https://github.com/nicotinii/chezmoi.git
+    chezmoi init https://github.com/nicotinii/dotfiles.git
 fi
 
 # Installer Zsh si absent
