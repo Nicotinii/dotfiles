@@ -61,7 +61,6 @@ fi
 if ! command -v starship &> /dev/null; then
     echo "🚀 Installation de Starship..."
     curl -sS https://starship.rs/install.sh | sh -s -- -y
-    sudo mv ~/.local/bin/starship /usr/local/bin/
 fi
 
 # Réappliquer la config chezmoi pour écraser les modifs d'installateurs
