@@ -57,6 +57,13 @@ if ! command -v kubecolor &> /dev/null; then
     sudo apt update && sudo apt install -y kubecolor
 fi
 
+# Installer starship globalement si absent
+if ! command -v starship &> /dev/null; then
+    echo "🚀 Installation de Starship..."
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
+    sudo mv ~/.local/bin/starship /usr/local/bin/
+fi
+
 # Réappliquer la config chezmoi pour écraser les modifs d'installateurs
 echo "📂 Réapplication de la configuration chezmoi..."
 chezmoi apply
