@@ -16,7 +16,7 @@ fi
 # Initialisation chezmoi
 if [ ! -d "$HOME/.local/share/chezmoi" ]; then
     echo "🔧 Initialisation de chezmoi avec ton dépôt Git..."
-    chezmoi init https://github.com/nicotinii/chezmoi.git
+    chezmoi init https://github.com/nicotinii/dotfiles.git
 fi
 
 echo "📂 Application de la configuration..."
