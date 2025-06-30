@@ -61,4 +61,11 @@ fi
 echo "📂 Réapplication de la configuration chezmoi..."
 chezmoi apply
 
-echo "✅ Environnement prêt. Lance zsh pour profiter de ta config !"
+# Définir Zsh comme shell par défaut si ce n'est pas déjà fait
+if [ "$SHELL" != "$(which zsh)" ]; then
+    echo "⚙️ Définition de Zsh comme shell par défaut..."
+    chsh -s "$(which zsh)"
+fi
+
+
+echo "✅ Environnement prêt. Relance ton terminal ou tape 'zsh' pour profiter de ta config !"
